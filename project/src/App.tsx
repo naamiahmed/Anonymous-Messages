@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { MessageForm } from './components/MessageForm';
 import { Messages } from './components/MessagePage';
-import { MessageCircle, Send, List } from 'lucide-react';
+import { MessageCircle, Send, } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -23,10 +23,10 @@ function App() {
                   <Send size={20} />
                   <span>Send</span>
                 </Link>
-                <Link to="/messages" className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
+                {/* <Link to="/messages" className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
                   <List size={20} />
                   <span>View messages</span>
-                </Link>
+                </Link> */}
               </div>
             </div>
           </div>
