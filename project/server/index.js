@@ -1,21 +1,23 @@
 import express from 'express';
-import mongoose from 'mongoose';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import { Message } from './models/message.js';
+import connectDB from './config.js';
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
 app.use(express.json());
 
-// MongoDB connection
-mongoose.connect('mongodb+srv://naamiahmed27:Naami12345%23@anonymousmessager.lmofc.mongodb.net/?retryWrites=true&w=majority&appName=AnonymousMessager')
-  .then(() => console.log('Connected to MongoDB'))
-  .catch(err => console.error('MongoDB connection error:', err));
+// Connect to MongoDB
+connectDB();
 
-// Add after existing POST route:
+// Routes
 app.get('/api/messages', async (req, res) => {
   try {
     const messages = await Message.find().sort({ timestamp: -1 });
@@ -24,9 +26,8 @@ app.get('/api/messages', async (req, res) => {
     console.error('Error fetching messages:', error);
     res.status(500).json({ error: 'Failed to fetch messages' });
   }
-});  
+});
 
-// Routes
 app.post('/api/messages', async (req, res) => {
   try {
     const { message } = req.body;
@@ -48,6 +49,7 @@ app.post('/api/messages', async (req, res) => {
   }
 });
 
+// Start server
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
