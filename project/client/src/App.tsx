@@ -2,13 +2,13 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { MessageForm } from './components/MessageForm';
 import { Messages } from './components/MessagePage';
-import { MessageCircle, Send,  } from 'lucide-react';
+import { MessageCircle, Send, Mail } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex flex-col">
         <Toaster position="top-right" />
         
         <nav className="bg-white shadow-sm">
@@ -23,16 +23,12 @@ function App() {
                   <Send size={20} />
                   <span>Send</span>
                 </Link>
-                {/* <Link to="/messages" className="flex items-center gap-2 text-blue-600 hover:text-blue-800">
-                  <List size={20} />
-                  <span>View messages</span>
-                </Link> */}
               </div>
             </div>
           </div>
         </nav>
 
-        <div className="flex flex-col items-center py-12 px-4">
+        <div className="flex flex-col items-center py-12 px-4 flex-grow">
           <Routes>
             <Route path="/" element={
               <>
@@ -47,6 +43,15 @@ function App() {
             <Route path="/messages" element={<Messages />} />
           </Routes>
         </div>
+
+        <footer className="w-full py-4 bg-white shadow-sm mt-auto">
+            <div className="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2 text-gray-600">
+            <span>Developed by <b>Naami Ahmed</b></span>
+            <a href="mailto:naamiahmed27@gmail.com" className="flex items-center gap-1 text-blue-600 hover:text-blue-800">
+              <Mail size={16} className="text-blue-600" />
+            </a>
+            </div>
+        </footer>
       </div>
     </BrowserRouter>
   );
