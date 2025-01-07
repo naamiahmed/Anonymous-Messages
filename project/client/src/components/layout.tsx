@@ -11,7 +11,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
               Send Message
             </Link>
             <Link to="/messages" className="text-blue-600 hover:text-blue-800 font-semibold">
-              {/* View Messages */}
+              View Messages
             </Link>
           </div>
         </div>
