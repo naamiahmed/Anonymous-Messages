@@ -4,11 +4,23 @@ import { MessageForm } from './components/MessageForm';
 import { Messages } from './components/MessagePage';
 import { MessageCircle, Send, Mail } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
+import { Helmet } from "react-helmet";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex flex-col">
+        <Helmet>
+          <script 
+            async 
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4343457660098479"
+            crossOrigin="anonymous"
+          />
+          <script>
+            {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+          </script>
+        </Helmet>
+
         <Toaster position="top-right" />
         
         <nav className="bg-white shadow-sm">
@@ -38,6 +50,15 @@ function App() {
                   </p>
                 </div>
                 <MessageForm />
+                <div className="w-full max-w-lg mt-8">
+                  <ins className="adsbygoogle"
+                    style={{ display: 'block' }}
+                    data-ad-client="ca-pub-4343457660098479"
+                    data-ad-slot="6407261752"
+                    data-ad-format="auto"
+                    data-full-width-responsive="true"
+                  />
+                </div>
               </>
             } />
             <Route path="/messages" element={<Messages />} />
@@ -45,12 +66,12 @@ function App() {
         </div>
 
         <footer className="w-full py-4 bg-white shadow-sm mt-auto">
-            <div className="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2 text-gray-600">
+          <div className="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2 text-gray-600">
             <span>Developed by <b>Naami Ahmed</b></span>
             <a href="mailto:naamiahmed27@gmail.com" className="flex items-center gap-1 text-blue-600 hover:text-blue-800">
               <Mail size={16} className="text-blue-600" />
             </a>
-            </div>
+          </div>
         </footer>
       </div>
     </BrowserRouter>
