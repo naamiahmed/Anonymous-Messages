@@ -5,6 +5,7 @@ import { Messages } from './components/MessagePage';
 import { MessageCircle, Send, Mail } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
 import { Helmet } from "react-helmet";
+import AdSense from './components/AdSense';
 
 function App() {
   return (
@@ -17,9 +18,6 @@ function App() {
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4343457660098479"
             crossOrigin="anonymous"
           />
-          <script>
-            {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-          </script>
         </Helmet>
 
         <Toaster position="top-right" />
@@ -54,13 +52,7 @@ function App() {
                 </div>
                 <MessageForm />
                 <div className="w-full max-w-lg mt-8">
-                  <ins className="adsbygoogle"
-                    style={{ display: 'block' }}
-                    data-ad-client="ca-pub-4343457660098479"
-                    data-ad-slot="6407261752"
-                    data-ad-format="auto"
-                    data-full-width-responsive="true"
-                  />
+                  <AdSense />
                 </div>
               </>
             } />
