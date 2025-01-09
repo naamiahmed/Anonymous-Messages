@@ -23,6 +23,7 @@ function App() {
 
         <Toaster position="top-right" />
         
+        {/* Navigation Bar */}
         <nav className="bg-white shadow-sm">
           <div className="max-w-7xl mx-auto px-4 py-4">
             <div className="flex justify-between items-center">
@@ -40,6 +41,7 @@ function App() {
           </div>
         </nav>
 
+        {/* Main Content */}
         <div className="flex flex-col items-center py-12 px-4 flex-grow">
           <Routes>
             <Route path="/" element={
@@ -65,6 +67,7 @@ function App() {
           </Routes>
         </div>
 
+        {/* Footer */}
         <footer className="w-full py-4 bg-white shadow-sm mt-auto">
           <div className="max-w-7xl mx-auto px-4 text-center flex items-center justify-center gap-2 text-gray-600">
             <span>Developed by <b>Naami Ahmed</b></span>
