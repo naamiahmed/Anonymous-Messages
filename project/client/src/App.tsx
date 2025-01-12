@@ -4,21 +4,12 @@ import { MessageForm } from './components/MessageForm';
 import { Messages } from './components/MessagePage';
 import { MessageCircle, Send, Mail } from 'lucide-react';
 import { Toaster } from 'react-hot-toast';
-import { Helmet } from "react-helmet";
 import AdSense from './components/AdSense';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 flex flex-col">
-        <Helmet>
-          <meta name="google-adsense-account" content="ca-pub-4343457660098479" />
-          <script 
-            async 
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4343457660098479"
-            crossOrigin="anonymous"
-          />
-        </Helmet>
 
         <Toaster position="top-right" />
         
