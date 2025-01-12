@@ -38,7 +38,7 @@ function App() {
               <>
                 <div className="w-full max-w-lg text-center mb-12">
                   <p className="text-gray-600">
-                    Share your thoughts freely. Your message will be stored anonymously.
+                    <b>Share your thoughts freely. Your message will be stored anonymously.</b>
                   </p>
                 </div>
                 <MessageForm />
